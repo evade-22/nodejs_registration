@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <title>User List</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-1"></div>
+            <div class="col-10">
+                <h3>{{title}}</h3>
+                <table class="table table-dark table-hover my-3">
+                    <thead>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">First Name</th>
+                            <th scope="col">Last Name</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Course ID</th>
+                            <th scope="col">Course Name</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each data}}
+                            <tr>
+                                <td>{{this.student_id}}</td>
+                                <td>{{this.first_name}}</td>
+                                <td>{{this.last_name}}</td>
+                                <td>{{this.email}}</td>
+                                <td>{{this.course_id}}</td>
+                                <td>{{this.course_name}}</td>
+                                <td>
+                                    <a href="/auth/updateForm/{{this.email}}" 
+                                    class="btn btn-success btn-sm"> Edit </a>
+                                    <a href="/auth/updateUser/{{this.email}}" 
+                                    class="btn btn-danger btn-sm"
+                                    onclick="return confirm('Delete Account?')"> Delete </a>
+                                </td>
+                            </tr>
+                        {{/each}}
+                    </tbody>
+                    </table>
+                    <a href="/auth/logout" 
+                    class="btn btn-info btn-sm"
+                    onclick="return confirm('Log out?')"> Log-Out </a>
+            </div>
+            <div class="col-1"></div>
+        </div>
+    </div>
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+</body>
+</html>

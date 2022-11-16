@@ -1,0 +1,11 @@
+Exercise:  Using Nodejs, Express, Handlebars 
+Database: enrolkodego
+Table: user, students, course
+
+Instruction:
+1.) user, students, and course table
+students: student_id, first_name, last_name, email, course_id LINKED to course table
+course: course_id, course_name, course_description (front-end, back-end, full web stack)
+2.) create a user account
+3.) admin logs in, displays number of students enrolled and their courses
+4.) admin should be able to add, update, and delete information
